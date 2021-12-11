@@ -1,0 +1,32 @@
+.btn {
+  background-color: #ddb1ff;
+  border: none;
+  border-radius: 10px;
+  font-family: $font;
+  color: $normalColor;
+  font-size: $normalSize;
+}
+
+.comment-btn {
+  width: 5rem;
+  height: 2.3rem;
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  padding-top: 4px;
+  transform: translate(-100%, -100%);
+  font-size: 1.7rem;
+  background-color: transparent;
+  color: #b8ffff;
+}
+.user-btn {
+  width: 8rem;
+  height: 1.6rem;
+}
+.ask-question {
+  background-color: rgba(9, 18, 255, 0.53);
+  width: 8rem;
+  color: white;
+  height: 1.9rem;
+  cursor: pointer;
+}

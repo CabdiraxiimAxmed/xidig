@@ -1,0 +1,21 @@
+@import './variables';
+@import './questionsAndAnswers/analytics';
+@import './questionsAndAnswers/question';
+@import './questionsAndAnswers/answer';
+@import './button';
+@import './comment';
+@import './addComment';
+@import './mobileResponsive/mobile';
+@import './registerform';
+@import './navbar';
+@import './home';
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fbfbfb;
+}

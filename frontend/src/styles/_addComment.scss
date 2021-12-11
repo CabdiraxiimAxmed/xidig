@@ -1,0 +1,15 @@
+.add-comment {
+  border: none;
+  margin: 18px 9rem 7px 10rem;
+  position: relative;
+  textarea {
+    outline: none;
+    border: none;
+    resize: none;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    font-family: $font;
+    color: $normalColor;
+    font-size: $normalSize;
+  }
+}
