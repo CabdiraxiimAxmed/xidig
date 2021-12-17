@@ -2,7 +2,7 @@ import QuestionLinks from './QuestionLinks';
 import { useCookies } from 'react-cookie';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-const Home = ({ questions }) => {
+const Home = ({ formData }) => {
   const [user_id, setUserId] = useCookies(['']);
   const [user, setUser] = useState(null);
   // using the server
@@ -11,7 +11,7 @@ const Home = ({ questions }) => {
   }, []);
   return user ? (
     <div className="question-link-wrapper">
-      <QuestionLinks questions={questions} />
+      <QuestionLinks formData={formData} />
     </div>
   ) : (
     <div>loading</div>

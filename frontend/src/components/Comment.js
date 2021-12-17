@@ -1,11 +1,13 @@
 import Button from './Button';
-const Comment = () => {
-  return (
-    <div className="comment">
-      <p>This is the comment</p>
-      <Button text="@mohamed" stylingClass="user-btn" />
-    </div>
-  );
+const Comment = ({ serverComment }) => {
+  return serverComment.map(comment => (
+    <>
+      <div key={comment._id} className="comment">
+        <p>{comment.comment}</p>
+        <Button text={`@${comment.username}`} stylingClass="user-btn" />
+      </div>
+    </>
+  ));
 };
 
 export default Comment;

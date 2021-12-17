@@ -1,10 +1,10 @@
-import AddComment from '../AddComment';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Comment from '../Comment';
 import Answers from './Answers';
 import QuestionAnalytics from './QuestionAnalytics';
 import axios from 'axios';
+import MarkdownView from 'react-showdown';
+import AnswerForm from './AnswerForm';
 
 const Questions = () => {
   const { questionId } = useParams();
@@ -28,15 +28,21 @@ const Questions = () => {
             <p>{question.username}</p>
           </div>
           <div className="question">
-            <p>{question.question}</p>
+            <p>
+              {
+                <MarkdownView
+                  markdown={question.question}
+                  options={{ tables: true, emoji: true }}
+                />
+              }
+            </p>
           </div>
         </div>
       </div>
       <div className="main-answer-container">
         <Answers answers={question.answers} />
-        <AddComment />
-        <Comment />
       </div>
+      <AnswerForm />
     </div>
   ) : (
     <div>Loading</div>

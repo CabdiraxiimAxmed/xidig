@@ -36,7 +36,6 @@ const Login = () => {
     try {
       // * if the response is right
       const user = await axios.post('/user/galid', data);
-      console.log(user.data);
       setCookie('login', user.data, {
         path: '/',
         maxAge: 1200,

@@ -32,6 +32,26 @@
       font-family: $font;
       color: $normalColor;
       font-size: $normalSize;
+      p {
+        div {
+          h1 {
+            color: rgba(9, 18, 255, 0.53);
+            font-size: 1.6rem;
+          }
+          img {
+            width: 100%;
+            height: 17rem;
+            object-fit: cover;
+            // margin-left: 4rem;
+          }
+          strong {
+            color: #ddb1ff;
+          }
+          em {
+            color: #ced0ff;
+          }
+        }
+      }
     }
   }
 }

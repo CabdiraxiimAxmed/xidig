@@ -25,6 +25,9 @@
       }
     }
     .question-details {
+      overflow-y: hidden;
+      height: 7rem;
+      position: relative;
       a {
         text-decoration: none;
         .question-name {
@@ -41,6 +44,8 @@
       }
       .tags {
         margin-top: 10px;
+        position: absolute;
+        bottom: 8px;
         button {
           font-family: $font;
           color: $normalColor;

@@ -5,10 +5,11 @@
 @import './button';
 @import './comment';
 @import './addComment';
-@import './mobileResponsive/mobile';
 @import './registerform';
 @import './navbar';
 @import './home';
+@import './askQuestion';
+@import './mobileResponsive/mobile';
 *,
 *::after,
 *::before {
@@ -18,4 +19,34 @@
 }
 body {
   background-color: #fbfbfb;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  display: inline-block;
+  padding: 3px 10px;
+  margin: 4px 0px;
+}
+pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  border-radius: 4px;
+}
+pre code {
+  background-color: transparent;
+  border-radius: none;
+  padding: 0;
+}
+.question-content {
+  img {
+    width: 98%;
+    height: 5rem;
+    object-fit: cover;
+    margin-right: 35px;
+  }
+  h1 {
+    font-size: $normalSize;
+  }
 }

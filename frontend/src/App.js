@@ -10,10 +10,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import AskQuestion from './components/AskQuestion';
 function App() {
-  const [questions, setQuestion] = useState(null);
+  const [formData, setFormData] = useState(null);
   useEffect(() => {
     axios.get('/suaal').then(response => {
-      setQuestion(response.data);
+      setFormData(response.data);
     });
   }, []);
 
@@ -27,11 +27,11 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route
               path="/banaan"
-              element={questions && <Home questions={questions} />}
+              element={formData && <Home formData={formData} />}
             />
             <Route
               path="/banaan/suaal/:questionId"
-              element={questions && <Questions />}
+              element={formData && <Questions />}
             />
             <Route path="/banaan/:username/weydi" element={<AskQuestion />} />
           </Route>
