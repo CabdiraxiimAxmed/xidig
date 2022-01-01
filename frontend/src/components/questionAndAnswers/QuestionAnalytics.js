@@ -1,4 +1,6 @@
-const QuestionAnalytics = () => {
+import answer from '../../features/answer';
+
+const QuestionAnalytics = ({ answers }) => {
   return (
     <div className="analytics">
       <p className="views">
@@ -8,7 +10,7 @@ const QuestionAnalytics = () => {
         jawaabti ugu dambeesay: <span>11-12-2021</span>
       </p>
       <p className="numberOfAnswers">
-        tirada jawaabaha: <span>0</span>
+        tirada jawaabaha: <span>{answers.length}</span>
       </p>
     </div>
   );

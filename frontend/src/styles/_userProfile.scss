@@ -1,0 +1,29 @@
+.user-content-and-user-side-bar-menu-container {
+  display: flex;
+  .side-bar-user-menu {
+    width: 15rem;
+    height: 87vh;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 2rem;
+    a {
+      font-family: $robotoFont;
+      color: $normalColor;
+      text-decoration: none;
+      width: 87%;
+      margin-left: 1rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .content-display-wrapper {
+    width: 50rem;
+    height: 87vh;
+    overflow-y: auto;
+  }
+}

@@ -18,6 +18,17 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  avatar: {
+    type: String,
+  },
+  gender: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const model = mongoose.model('user', UserSchema);

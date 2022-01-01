@@ -7,9 +7,11 @@
 @import './addComment';
 @import './registerform';
 @import './navbar';
-@import './home';
 @import './askQuestion';
+@import './home';
 @import './mobileResponsive/mobile';
+@import './userProfileMenu';
+@import './userProfile';
 *,
 *::after,
 *::before {
@@ -18,26 +20,82 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #fbfbfb;
+  background-color: #080a17;
+  overflow-x: hidden;
 }
 
-code {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
-  display: inline-block;
-  padding: 3px 10px;
-  margin: 4px 0px;
+h1 {
+  font-size: 20px;
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 17px;
+}
+h4 {
+  font-size: 16px;
+}
+h5 {
+  font-size: 15px;
+}
+h6 {
+  font-size: 14px;
+}
+a {
+  img {
+    width: 11rem;
+    height: 1.4rem;
+  }
+}
+p {
+  font-size: 16px;
+  line-height: 30.2px;
+}
+ul {
+  li {
+    margin-left: 30px;
+    font-size: 16px;
+  }
+}
+blockquote {
+  margin-left: 10px;
+  border-left: 10px solid $primaryButtonColor;
+  padding-left: 3px;
+  font-family: 'Shadows Into Light', cursive;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  background-color: $primaryCardColor;
+  p {
+    font-size: 20px;
+  }
 }
 pre {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.3);
-  padding: 3px;
-  border-radius: 4px;
+  box-sizing: border-box;
+  color: white;
+  background: rgb(20, 20, 20);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  text-shadow: black 0px -0.1em 0.2em;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+  border-radius: 0.5em;
+  border: 0.3em solid rgb(84, 84, 84);
+  box-shadow: black 1px 1px 0.5em inset;
+  margin: 0.5em 0px;
+  overflow: auto;
+  padding: 1em;
 }
-pre code {
-  background-color: transparent;
-  border-radius: none;
-  padding: 0;
+img {
+  width: 40rem;
+  height: 20rem;
+  object-fit: cover;
 }
 .question-content {
   img {

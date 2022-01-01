@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { comment as userComment } from '../features/comment';
+import { comment as userComment, clearComment } from '../features/comment';
 import Button from './Button';
 
 const AddComment = ({ answer_id }) => {
@@ -22,7 +22,7 @@ const AddComment = ({ answer_id }) => {
     try {
       await axios.post(`/suaal/${questionId}`, data);
       dispatch(userComment({ comment, answerId, username: user.username }));
-      console.log(document.querySelector('.add-comment textarea'));
+      dispatch(clearComment());
       document.querySelector('.add-comment textarea').value = '';
     } catch (e) {
       console.log(e.message);

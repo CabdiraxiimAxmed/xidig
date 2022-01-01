@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import Answers from './Answers';
 import QuestionAnalytics from './QuestionAnalytics';
 import axios from 'axios';
-import MarkdownView from 'react-showdown';
+import ReactMarkdown from 'react-markdown';
 import AnswerForm from './AnswerForm';
+import { useSelector } from 'react-redux';
 
 const Questions = () => {
   const { questionId } = useParams();
+  const user = useSelector(state => state.user.value);
   const [question, setQuestion] = useState(null);
   useEffect(() => {
     axios
@@ -17,25 +19,15 @@ const Questions = () => {
   }, []);
   return question ? (
     <div className="question-answer-container">
-      <QuestionAnalytics />
+      <QuestionAnalytics answers={question.answers} />
       <div className="question-container">
         <div>
           <div className="postedPerson">
-            <img
-              src="https://media.istockphoto.com/photos/young-woman-using-smart-phone-on-a-city-street-picture-id1301953709"
-              alt="woman standing"
-            />
+            <img src={user.avatar} alt="avatar " />
             <p>{question.username}</p>
           </div>
           <div className="question">
-            <p>
-              {
-                <MarkdownView
-                  markdown={question.question}
-                  options={{ tables: true, emoji: true }}
-                />
-              }
-            </p>
+            <p>{<ReactMarkdown children={question.question} />}</p>
           </div>
         </div>
       </div>

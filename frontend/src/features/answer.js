@@ -9,8 +9,11 @@ const answerSlice = createSlice({
     answer: (state, action) => {
       state.value = action.payload;
     },
+    clearAnswer: state => {
+      state.value = {};
+    },
   },
 });
 
-export const { answer } = answerSlice.actions;
+export const { answer, clearAnswer } = answerSlice.actions;
 export default answerSlice.reducer;

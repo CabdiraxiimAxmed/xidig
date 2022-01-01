@@ -1,13 +1,12 @@
 .question-container {
-  background-color: white;
   margin-left: 10rem;
   margin-right: 9rem;
+  border: 1px solid $primaryButtonColor;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   div {
     width: 90%;

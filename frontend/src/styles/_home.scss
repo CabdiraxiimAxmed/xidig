@@ -7,66 +7,66 @@
   transform: translateX(-50%);
   border-left: 1px solid rgba(0, 0, 0, 0.09);
   border-right: 1px solid rgba(0, 0, 0, 0.09);
-  .question-link-container {
-    .posted-user {
-      display: flex;
-      align-items: baseline;
-      img {
-        margin-top: 4px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        margin-left: 4px;
-      }
-      p {
-        font-family: $font;
-        color: $normalColor;
-        font-size: $normalSize;
-      }
+}
+.question-link-container {
+  .posted-user {
+    display: flex;
+    align-items: baseline;
+    img {
+      margin-top: 4px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-left: 4px;
     }
-    .question-details {
-      overflow-y: hidden;
-      height: 7rem;
-      position: relative;
-      a {
-        text-decoration: none;
-        .question-name {
-          font-family: $font;
-          color: rgba(9, 18, 255, 0.53);
-          margin-left: 29px;
-        }
-      }
-      .question-content {
+    p {
+      font-family: $font;
+      color: $normalColor;
+      font-size: $normalSize;
+    }
+  }
+  .question-details {
+    overflow-y: hidden;
+    height: 7rem;
+    position: relative;
+    a {
+      text-decoration: none;
+      .question-name {
         font-family: $font;
         color: $normalColor;
-        font-size: 15px;
         margin-left: 29px;
       }
-      .tags {
-        margin-top: 10px;
-        position: absolute;
-        bottom: 8px;
-        button {
-          font-family: $font;
-          color: $normalColor;
-          font-size: 16px;
-          margin-left: 20px;
-          margin-top: 7px;
-          background-color: #b8ffff;
-          border: none;
-          padding: 4px 10px;
-          border-radius: 5px;
-          cursor: pointer;
-          box-shadow: 6px 6px 20px #ced0ff;
-        }
+    }
+    .question-content {
+      font-family: $font;
+      color: $normalColor;
+      font-size: 15px;
+      margin-left: 29px;
+    }
+    .tags {
+      margin-top: 10px;
+      position: absolute;
+      bottom: 8px;
+      button {
+        font-family: $font;
+        color: black;
+        font-size: 16px;
+        margin-left: 20px;
+        margin-top: 7px;
+        background-color: #b8ffff;
+        border: none;
+        padding: 4px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: $shadowLength #ced0ff;
       }
     }
-    .bottom-line {
-      margin-top: 14px;
-      margin-left: 18px;
-      width: 90%;
-      height: 0.5px;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
+  }
+  .bottom-line {
+    margin-top: 14px;
+    margin-left: 18px;
+    width: 90%;
+    height: 0.5px;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 }

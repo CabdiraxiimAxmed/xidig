@@ -4,26 +4,32 @@ const bcrypt = require('bcryptjs');
 const User = require('../models/user');
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
-  const userData = {};
-  const { name, username, email } = await User.findOne({ _id: id });
-  const user = { name, username, email };
+  const { name, username, email, gender, avatar } = await User.findOne({
+    _id: id,
+  });
+  const user = { name, username, email, gender, avatar };
   res.send(user);
 });
 router.post('/diwaan', async (req, res) => {
-  const { name, username, email, password } = req.body;
+  const { name, username, email, password, gender } = req.body;
+  let avatar = null;
   const oldUser = await User.findOne({ username });
   if (oldUser) {
     res.status(400).send('existed');
     return;
   }
+  if (gender === 'male')
+    avatar = `https://avatars.dicebear.com/api/male/:${username}.svg`;
+  else avatar = `https://avatars.dicebear.com/api/bottts/:${username}.svg`;
   const hash = await bcrypt.hash(password, 10);
   const user = await new User({
     name,
     username,
     email,
     password: hash,
+    avatar,
+    gender,
   });
-  console.log(user);
   await user.save();
   res.end();
 });

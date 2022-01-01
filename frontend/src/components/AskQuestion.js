@@ -1,7 +1,7 @@
 import Button from './Button';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import MarkdownView from 'react-showdown';
+import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 const AskQuestion = () => {
   const { username } = useParams();
@@ -20,18 +20,18 @@ const AskQuestion = () => {
   async function sendQuestionData(e) {
     e.preventDefault();
     let data = {};
-    if (tagString) {
-      const tags = tagString.split(' ');
-      /**
-       * question content @markdownEditorContent
-       * question name  @questionName
-       * user name  @username
-       * tags
-       */
-      data = { question: markdownEditorContent, questionName, username, tags };
-      const response = await axios.post('/suaal', data);
-      console.log(response.data);
-    }
+    let tags = null;
+    if (tagString) tags = tagString.split(' ');
+    /**
+     * question content @markdownEditorContent
+     * question name  @questionName
+     * user name  @username
+     * tags
+     */
+    data = { question: markdownEditorContent, questionName, username, tags };
+    console.log(data);
+    const response = await axios.post('/suaal', data);
+    console.log(response.data);
   }
   function markdownEditorButtons(e) {
     e.preventDefault();
@@ -56,7 +56,11 @@ const AskQuestion = () => {
     <form className="question-form-container">
       <div>
         <label>magaca su,aasha</label>
-        <input type="text" onChange={e => handleQuestionInput(e)} />
+        <input
+          type="text"
+          onChange={e => handleQuestionInput(e)}
+          spellCheck="false"
+        />
       </div>
       <div>
         <label>su,aasha</label>
@@ -77,20 +81,21 @@ const AskQuestion = () => {
           <textarea
             className="markdown-editor"
             onChange={e => handleTextArea(e)}
+            spellCheck="false"
           ></textarea>
           <div className="html-markdown-view">
-            {
-              <MarkdownView
-                markdown={markdownEditorContent}
-                options={{ tables: true, emoji: true }}
-              />
-            }
+            <ReactMarkdown children={markdownEditorContent} />
           </div>
         </div>
       </div>
       <div>
         <label>Tag</label>
-        <input type="text" className="tag" onChange={e => handleTagInput(e)} />
+        <input
+          type="text"
+          spellCheck="false"
+          className="tag"
+          onChange={e => handleTagInput(e)}
+        />
       </div>
       <Button
         text="Gudbi"

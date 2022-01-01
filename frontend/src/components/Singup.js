@@ -16,6 +16,8 @@ const Singup = () => {
   const [emailError, setEmailError] = useState(null);
   const [passwordError, setPasswordError] = useState(null);
   const [password1Error, setPassword1Error] = useState(null);
+  const [gender, setGender] = useState(null);
+  const [genderError, setGenderError] = useState(null);
   function handleName(e) {
     setName(e.target.value);
   }
@@ -31,10 +33,20 @@ const Singup = () => {
   function handlePassword1(e) {
     setPassword1(e.target.value);
   }
+  function handleGender(e) {
+    if (e.target.name === 'male') {
+      document.querySelector("[name='male']").checked = true;
+      document.querySelector("[name='female']").checked = false;
+    } else {
+      document.querySelector("[name='male']").checked = false;
+      document.querySelector("[name='female']").checked = true;
+    }
+    setGender(e.target.name);
+  }
   async function sendData(e) {
     e.preventDefault();
     let isError = false;
-    const data = { name, username, email, password, password1 };
+    const data = { name, username, email, password, password1, gender };
     if (!name) {
       setNameError('Fadlan buuxi meesha banaan');
       isError = true;
@@ -55,13 +67,10 @@ const Singup = () => {
       setPassword1Error('Furaha iskuma aadana');
       isError = true;
     } else setPassword1Error(null);
-    if (isError) return;
-    try {
-      await axios.post('/user/diwaan', data);
-      navigate('/isticmaale/galid');
-    } catch (e) {
-      setError('Waanu ka xunahay qalad ayaa dhacay');
-    }
+    if (!gender) {
+      setGenderError('Fadlan Jinsigaaga');
+      isError = true;
+    } else setGenderError(null);
     setTimeout(() => {
       setNameError(null);
       setUsernameError(null);
@@ -69,7 +78,15 @@ const Singup = () => {
       setPasswordError(null);
       setPassword1Error(null);
       setError(null);
+      setGenderError(null);
     }, 3000);
+    if (isError) return;
+    try {
+      await axios.post('/user/diwaan', data);
+      navigate('/isticmaale/galid');
+    } catch (e) {
+      setError('Waanu ka xunahay qalad ayaa dhacay');
+    }
   }
   return (
     <>
@@ -92,6 +109,28 @@ const Singup = () => {
           <label>Fadlan Gali Furaha Markale</label>
           <input type="text" onChange={e => handlePassword1(e)} />
           {password1Error && <ErrorOutput error={password1Error} />}
+          <div className="user-gender-container">
+            <label>Jinsiga</label>
+            <div className="user-gender">
+              <div>
+                <input
+                  type="checkbox"
+                  name="male"
+                  onChange={e => handleGender(e)}
+                />
+                <label>Rag</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="female"
+                  onChange={e => handleGender(e)}
+                />
+                <label>Dumar</label>
+                {genderError && <ErrorOutput error={genderError} />}
+              </div>
+            </div>
+          </div>
           <input
             type="submit"
             className="submit-btn"

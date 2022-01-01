@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const AnswerSchema = new mongoose.Schema({
   answer: {
     type: String,
-    require: true,
+    required: true,
   },
   username: {
     type: String,

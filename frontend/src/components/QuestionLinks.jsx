@@ -1,14 +1,13 @@
-import MarkdownView from 'react-showdown';
+import { useSelector } from 'react-redux';
+import ReactMarkdown from 'react-markdown';
 const QuestionLinks = ({ formData }) => {
+  const user = useSelector(state => state.user.value);
   return (
     <>
       {formData.map(question => (
         <div key={question._id} className="question-link-container">
           <div className="posted-user">
-            <img
-              src="https://media.istockphoto.com/photos/young-woman-using-smart-phone-on-a-city-street-picture-id1301953709"
-              alt="my"
-            />
+            <img src={user.avatar} alt="avatar" />
             <p>@{question.username}</p>
           </div>
           <div className="question-details">
@@ -16,10 +15,7 @@ const QuestionLinks = ({ formData }) => {
               <h1 className="question-name">{question.questionName}</h1>
             </a>
             <p className="question-content">
-              <MarkdownView
-                markdown={question.question}
-                options={{ tables: true, emoji: true }}
-              />
+              <ReactMarkdown children={question.question} />
             </p>
             <div className="tags">
               {question.tags.map(tag => (

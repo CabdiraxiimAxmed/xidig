@@ -15,14 +15,15 @@
   top: 100%;
   left: 100%;
   padding-top: 4px;
+  background-color: transparent;
   transform: translate(-100%, -100%);
   font-size: 1.7rem;
-  background-color: transparent;
   color: #b8ffff;
 }
 .user-btn {
   width: 8rem;
   height: 1.6rem;
+  background-color: transparent;
 }
 .ask-question {
   background-color: rgba(9, 18, 255, 0.53);
@@ -35,11 +36,12 @@
   width: 18rem;
   height: 2.5rem;
   margin-left: 13rem;
-  margin-top: 8rem;
+  margin-top: 1rem;
   font-family: $fira;
-  color: #535252;
+  color: $normalColor;
   letter-spacing: 1px;
-  box-shadow: 6px 6px 20px #ddb1ff;
+  background-color: $primaryButtonColor;
+  box-shadow: $shadowLength $primaryButtonColor;
 }
 .markdown-menu-btn {
   transition: all 0.2s linear;
@@ -76,4 +78,27 @@
   background-color: transparent;
   top: 24px;
   left: 0;
+}
+
+.logout-btn {
+  width: 7rem;
+  padding: 3px 0;
+  font-family: $robotoFont;
+  background-color: rgb(252, 122, 122);
+  color: white;
+  border: 1px solid red;
+}
+.change-credential-btn {
+  margin-left: 1.1rem;
+  margin-top: 1rem;
+}
+.answer-form-submit {
+  margin-top: 8rem;
+}
+.like-btn {
+  width: 5rem;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 0;
 }

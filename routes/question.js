@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Questions = require('../models/question');
 const Comment = require('../models/comment');
 const Answers = require('../models/answer');
+const Likes = require('../models/likes');
 router.get('/', (req, res) => {
   Questions.find({}, (err, result) => {
     res.json(result);
@@ -15,6 +16,14 @@ router.get('/:id', async (req, res) => {
   }).lean();
   for (let answer of answers) {
     let comment = await Comment.find({ answerId: answer._id });
+    let likes = await Likes.find({
+      $and: [{ username: answer.username }, { answerId: answer._id }],
+    });
+    if (likes.length) {
+      answer['liked'] = true;
+    } else {
+      answer['liked'] = false;
+    }
     answer['comments'] = comment;
   }
   const data = {
@@ -43,8 +52,6 @@ router.post('/:id', async (req, res) => {
     await newAnswer.save();
     res.send('sucess');
   }
-  // const newComment = new Comment({});
-  // res.send('success');
 });
 
 router.post('/', async (req, res) => {
@@ -52,5 +59,24 @@ router.post('/', async (req, res) => {
   const newQuestion = new Questions({ question, questionName, username, tags });
   await newQuestion.save();
   res.send('success');
+});
+router.post('/:username/likes', async (req, res) => {
+  const { username, answerId, likes, isIncremented } = req.body;
+  await Answers.updateOne({ _id: answerId }, { $set: { likes } });
+  if (isIncremented) {
+    const newLikes = new Likes({ username, answerId });
+    await newLikes.save();
+    res.send('success');
+  } else {
+    await Likes.deleteOne({
+      $and: [{ username }, { answerId }],
+    });
+    res.send('success');
+  }
+});
+router.get('/user-questions/:username', async (req, res) => {
+  const { username } = req.params;
+  const questions = await Questions.find({ username });
+  res.send(questions);
 });
 module.exports = router;

@@ -9,6 +9,7 @@ import Home from './components/Home';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import AskQuestion from './components/AskQuestion';
+import UserProfile from './components/UserProfile';
 function App() {
   const [formData, setFormData] = useState(null);
   useEffect(() => {
@@ -16,7 +17,6 @@ function App() {
       setFormData(response.data);
     });
   }, []);
-
   return (
     <Router>
       <div className="App">
@@ -34,6 +34,7 @@ function App() {
               element={formData && <Questions />}
             />
             <Route path="/banaan/:username/weydi" element={<AskQuestion />} />
+            <Route path="/banaan/:username/profile" element={<UserProfile />} />
           </Route>
         </Routes>
       </div>

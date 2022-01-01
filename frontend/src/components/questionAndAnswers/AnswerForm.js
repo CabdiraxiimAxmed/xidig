@@ -1,9 +1,9 @@
 import Button from '../Button';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import MarkdownView from 'react-showdown';
 import { useSelector, useDispatch } from 'react-redux';
-import { answer } from '../../features/answer';
+import { answer, clearAnswer } from '../../features/answer';
+import ReactMarkdown from 'react-markdown';
 import axios from 'axios';
 const AnswerForm = () => {
   const { questionId } = useParams();
@@ -16,11 +16,7 @@ const AnswerForm = () => {
 
   async function sendAnswerData(e) {
     e.preventDefault();
-    /**
-     * answer @makrdownEditorContent
-     * username @username
-     * questionId @questionId
-     */
+
     const data = {
       answer: markdownContentEditor,
       username: user.username,
@@ -34,6 +30,7 @@ const AnswerForm = () => {
           username: data.username,
           questionId,
           comments: [],
+          likes: 0,
         })
       );
     } catch (e) {
@@ -83,19 +80,14 @@ const AnswerForm = () => {
               onChange={e => handleTextArea(e)}
             ></textarea>
             <div className="html-markdown-view">
-              {
-                <MarkdownView
-                  markdown={markdownContentEditor}
-                  options={{ tables: true, emoji: true }}
-                />
-              }
+              {<ReactMarkdown children={markdownContentEditor} />}
             </div>
           </div>
         </div>
 
         <Button
           text="Gudbi"
-          stylingClass="question-form-submit"
+          stylingClass="question-form-submit answer-form-submit"
           handleClick={e => sendAnswerData(e)}
         />
       </form>

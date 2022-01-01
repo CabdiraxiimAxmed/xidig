@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;500;700&family=Roboto&family=Shadows+Into+Light&display=swap');
 $font: 'Montserrat', sans-serif;
-$normalColor: #898787;
+$normalColor: #c8c7cc;
 $normalSize: 18px;
 $breakpoint-phone: 480px;
 $fira: 'Fira Code', sans-serif;
+$robotoFont: 'Roboto', sans-serif;
+$shadowLength: 1px 1px 6px;
+$primaryButtonColor: rgba(9, 18, 255, 0.53);
+$primaryCardColor: #0e1127;

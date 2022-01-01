@@ -1,15 +1,15 @@
 .register-form {
   width: 20rem;
-  height: 28rem;
+  height: 30rem;
   padding-left: 3rem;
   padding-top: 1rem;
-  background-color: white;
+  background-color: $primaryCardColor;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-  box-shadow: 6px 6px 20px #ced0ff;
+  box-shadow: 1px 1px 20px #0e1127;
 
   h2 {
     font-family: $font;
@@ -43,8 +43,28 @@
       border-bottom: 2px solid #ced0ff;
       outline: none;
     }
+    .user-gender-container {
+      label {
+        display: inline;
+        color: rgba(0, 0, 0, 0.8);
+        font-family: $robotoFont;
+      }
+      .user-gender {
+        width: 18rem;
+        display: flex;
+        align-items: center;
+        margin-top: 9px;
+        margin-left: 19px;
+        gap: 30px;
+
+        input {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
     .submit-btn {
-      background-color: #ced0ff;
+      background-color: $primaryButtonColor;
       border: none;
       width: 10rem;
       margin: 25px 0 0 25px;
@@ -55,7 +75,7 @@
       font-weight: bold;
       letter-spacing: 2px;
       cursor: pointer;
-      box-shadow: 6px 6px 20px #ced0ff;
+      box-shadow: $shadowLength $primaryButtonColor;
     }
   }
 }
