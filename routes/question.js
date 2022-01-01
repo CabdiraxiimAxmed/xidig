@@ -4,10 +4,14 @@ const Comment = require('../models/comment');
 const Answers = require('../models/answer');
 const Likes = require('../models/likes');
 const Users = require('../models/user');
-router.get('/', (req, res) => {
-  Questions.find({}, (err, result) => {
-    res.json(result);
-  });
+router.get('/', async (req, res) => {
+  let questions = await Questions.find({}).lean();
+  for (let question of questions) {
+    const user = await Users.findOne({ username: question.username });
+    question['avatar'] = user.avatar;
+  }
+  console.log(questions);
+  res.json(questions);
 });
 router.get('/:id', async (req, res) => {
   const { id } = req.params;

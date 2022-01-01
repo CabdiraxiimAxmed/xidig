@@ -7,7 +7,7 @@ const QuestionLinks = ({ formData }) => {
       {formData.map(question => (
         <div key={question._id} className="question-link-container">
           <div className="posted-user">
-            <img src={user.avatar} alt="avatar" />
+            <img src={question.avatar} alt="avatar" />
             <p>@{question.username}</p>
           </div>
           <div className="question-details">
