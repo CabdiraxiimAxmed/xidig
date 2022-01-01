@@ -3,6 +3,7 @@ const Questions = require('../models/question');
 const Comment = require('../models/comment');
 const Answers = require('../models/answer');
 const Likes = require('../models/likes');
+const Users = require('../models/user');
 router.get('/', (req, res) => {
   Questions.find({}, (err, result) => {
     res.json(result);
@@ -25,11 +26,15 @@ router.get('/:id', async (req, res) => {
       answer['liked'] = false;
     }
     answer['comments'] = comment;
+    let user = await Users.findOne({ username: answer.username });
+    answer['avatar'] = user.avatar;
   }
+  const questionUser = await Users.findOne({ username: question.username });
   const data = {
     questionName: question.questionName,
     question: question.question,
     username: question.username,
+    avatar: questionUser.avatar,
     tags: question.tags,
     answers,
   };

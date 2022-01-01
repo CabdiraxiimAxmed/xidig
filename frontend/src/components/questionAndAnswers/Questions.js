@@ -23,7 +23,7 @@ const Questions = () => {
       <div className="question-container">
         <div>
           <div className="postedPerson">
-            <img src={user.avatar} alt="avatar " />
+            <img src={question.avatar} alt="avatar " />
             <p>{question.username}</p>
           </div>
           <div className="question">

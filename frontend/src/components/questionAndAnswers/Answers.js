@@ -73,7 +73,7 @@ const Answers = ({ answers }) => {
 
         <div>
           <div className="postedPerson">
-            <img src={user.avatar} alt="avatar" />
+            <img src={answer.avatar} alt="avatar" />
             <p>{answer.username}</p>
           </div>
           <div className="answer">

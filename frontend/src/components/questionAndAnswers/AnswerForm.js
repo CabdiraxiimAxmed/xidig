@@ -31,6 +31,7 @@ const AnswerForm = () => {
           questionId,
           comments: [],
           likes: 0,
+          avatar: user.avatar,
         })
       );
     } catch (e) {
