@@ -13,7 +13,7 @@ const Questions = () => {
   const [question, setQuestion] = useState(null);
   useEffect(() => {
     axios
-      .get(`/suaal/${questionId}`)
+      .get(`/suaal/clickedQuestion/${questionId}/${user.username}`)
       .then(response => setQuestion(response.data))
       .catch(e => console.log(e.message));
   }, []);

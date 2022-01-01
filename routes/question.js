@@ -10,11 +10,10 @@ router.get('/', async (req, res) => {
     const user = await Users.findOne({ username: question.username });
     question['avatar'] = user.avatar;
   }
-  console.log(questions);
   res.json(questions);
 });
-router.get('/:id', async (req, res) => {
-  const { id } = req.params;
+router.get('/clickedQuestion/:id/:username', async (req, res) => {
+  const { id, username } = req.params;
   const question = await Questions.findOne({ _id: id });
   const answers = await Answers.find({
     questionId: question.id,
@@ -22,8 +21,9 @@ router.get('/:id', async (req, res) => {
   for (let answer of answers) {
     let comment = await Comment.find({ answerId: answer._id });
     let likes = await Likes.find({
-      $and: [{ username: answer.username }, { answerId: answer._id }],
+      $and: [{ username: username }, { answerId: answer._id }],
     });
+    console.log(likes);
     if (likes.length) {
       answer['liked'] = true;
     } else {
