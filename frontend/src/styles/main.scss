@@ -12,6 +12,7 @@
 @import './mobileResponsive/mobile';
 @import './userProfileMenu';
 @import './userProfile';
+@import './subjectSiteMap';
 *,
 *::after,
 *::before {
@@ -22,25 +23,38 @@
 body {
   background-color: #080a17;
   overflow-x: hidden;
+  line-height: 30px;
 }
 
 h1 {
   font-size: 20px;
+  color: $normalColor;
+  font-family: $font;
 }
 h2 {
   font-size: 18px;
+  color: $normalColor;
+  font-family: $font;
 }
 h3 {
   font-size: 17px;
+  color: $normalColor;
+  font-family: $font;
 }
 h4 {
   font-size: 16px;
+  color: $normalColor;
+  font-family: $font;
 }
 h5 {
   font-size: 15px;
+  color: $normalColor;
+  font-family: $font;
 }
 h6 {
   font-size: 14px;
+  color: $normalColor;
+  font-family: $font;
 }
 a {
   img {
@@ -49,53 +63,37 @@ a {
   }
 }
 p {
-  font-size: 16px;
-  line-height: 30.2px;
+  font-family: $robotoFont;
+  color: $normalColor;
+  font-size: $normalSize;
 }
 ul {
   li {
     margin-left: 30px;
     font-size: 16px;
+    color: $normalColor;
+    font-family: $font;
   }
 }
 blockquote {
   margin-left: 10px;
   border-left: 10px solid $primaryButtonColor;
+  width: 20rem;
   padding-left: 3px;
   font-family: 'Shadows Into Light', cursive;
   margin-top: 5px;
+  margin-left: 4rem;
   margin-bottom: 10px;
   background-color: $primaryCardColor;
   p {
     font-size: 20px;
+    font-family: 'Shadows Into Light', cursive;
   }
 }
-pre {
-  box-sizing: border-box;
-  color: white;
-  background: rgb(20, 20, 20);
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 1em;
-  text-align: left;
-  text-shadow: black 0px -0.1em 0.2em;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  overflow-wrap: normal;
-  line-height: 1.5;
-  tab-size: 4;
-  hyphens: none;
-  border-radius: 0.5em;
-  border: 0.3em solid rgb(84, 84, 84);
-  box-shadow: black 1px 1px 0.5em inset;
-  margin: 0.5em 0px;
-  overflow: auto;
-  padding: 1em;
-}
+
 img {
-  width: 40rem;
-  height: 20rem;
-  object-fit: cover;
+  width: 18rem;
+  height: 18rem;
 }
 .question-content {
   img {
@@ -107,4 +105,29 @@ img {
   h1 {
     font-size: $normalSize;
   }
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid white;
+  color: white;
+  font-family: $robotoFont;
+  font-size: $normalSize;
+}
+th {
+  text-align: center !important;
+}
+td {
+  text-align: center !important;
+}
+.markdown-container {
+  width: 50rem;
+  margin-left: 2rem;
+}
+.subject-content-container {
+  display: flex;
 }

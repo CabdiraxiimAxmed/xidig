@@ -5,6 +5,9 @@ import { useSelector } from 'react-redux';
 import { clearAnswer } from '../../features/answer';
 import { useDispatch } from 'react-redux';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import { twilight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import Button from '../Button';
 import axios from 'axios';
 const Answers = ({ answers }) => {
@@ -77,7 +80,32 @@ const Answers = ({ answers }) => {
             <p>{answer.username}</p>
           </div>
           <div className="answer">
-            <p>{<ReactMarkdown children={answer.answer} />}</p>
+            <p>
+              {
+                <ReactMarkdown
+                  children={answer.answer}
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    code({ node, inline, className, children, ...props }) {
+                      const match = /language-(\w+)/.exec(className || '');
+                      return !inline && match ? (
+                        <SyntaxHighlighter
+                          children={String(children).replace(/\n$/, '')}
+                          style={twilight}
+                          language={match[1]}
+                          PreTag="div"
+                          {...props}
+                        />
+                      ) : (
+                        <code className={className} {...props}>
+                          {children}
+                        </code>
+                      );
+                    },
+                  }}
+                />
+              }
+            </p>
           </div>
         </div>
       </div>
