@@ -24,6 +24,7 @@ body {
   background-color: #080a17;
   overflow-x: hidden;
   line-height: 30px;
+  padding-bottom: 1rem;
 }
 
 h1 {
@@ -76,21 +77,35 @@ ul {
   }
 }
 blockquote {
-  margin-left: 10px;
   border-left: 10px solid $primaryButtonColor;
-  width: 20rem;
+  width: 30rem;
   padding-left: 3px;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Indie Flower', cursive;
   margin-top: 5px;
-  margin-left: 4rem;
+  margin-left: 2rem;
   margin-bottom: 10px;
   background-color: $primaryCardColor;
   p {
     font-size: 20px;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Indie Flower', cursive;
   }
 }
 
+p {
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+  a {
+    img {
+      object-fit: cover;
+      width: 14rem;
+      height: 2rem;
+    }
+  }
+}
 img {
   width: 18rem;
   height: 18rem;
@@ -109,6 +124,10 @@ img {
 table {
   width: 100%;
   border-collapse: collapse;
+  margin: 10px 0;
+}
+code {
+  color: rgb(243, 189, 11);
 }
 table,
 th,
@@ -125,7 +144,7 @@ td {
   text-align: center !important;
 }
 .markdown-container {
-  width: 50rem;
+  width: 50%;
   margin-left: 2rem;
 }
 .subject-content-container {

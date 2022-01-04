@@ -28,8 +28,8 @@ const SubjectSiteMap = () => {
         handleClick={myFunction}
       />
       <div className="subject-sitemap-content">
-        <Link to="/banaan/baro/html/heading">Cinwaanada</Link>
-        <Link to="#">Link2</Link>
+        <Link to="/banaan/baro/html/waa-maxay-html">Waa maxay html</Link>
+        <Link to="/banaan/baro/html/cinwaan">Cinwaanada</Link>
         <Link to="#">Link3</Link>
       </div>
     </div>

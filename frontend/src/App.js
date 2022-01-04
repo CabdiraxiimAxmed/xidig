@@ -12,6 +12,7 @@ import AskQuestion from './components/AskQuestion';
 import UserProfile from './components/UserProfile';
 import Head from './components/learning/html/Head';
 import Html from './components/learning/html/Html';
+import WhatIsHTML from './components/learning/html/WhatIsHTML';
 function App() {
   const [formData, setFormData] = useState(null);
   useEffect(() => {
@@ -37,8 +38,12 @@ function App() {
             />
             <Route path="/banaan/:username/weydi" element={<AskQuestion />} />
             <Route path="/banaan/:username/profile" element={<UserProfile />} />
-            <Route path="/banaan/baro/html/heading" element={<Head />} />
             <Route path="/banaan/baro/html/" element={<Html />} />
+            <Route path="/banaan/baro/html/cinwaan" element={<Head />} />
+            <Route
+              path="/banaan/baro/html/waa-maxay-html"
+              element={<WhatIsHTML />}
+            />
           </Route>
         </Routes>
       </div>
