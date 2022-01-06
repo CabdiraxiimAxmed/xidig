@@ -38,7 +38,7 @@ const Login = () => {
       const user = await axios.post('/user/galid', data);
       setCookie('login', user.data, {
         path: '/',
-        maxAge: 1200,
+        maxAge: 86400,
       });
       navigate('/banaan');
     } catch (e) {

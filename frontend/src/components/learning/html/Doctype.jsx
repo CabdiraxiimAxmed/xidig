@@ -1,11 +1,10 @@
-import React from 'react';
 import SubjectSiteMap from '../SubjectSiteMap';
-import whatIsHTML from '../../../subjects/html/whatIsHTML.md';
+import whatIsHTML from '../../../subjects/html/doctype.md';
 import { useEffect, useState } from 'react';
+import React from 'react'
 import MarkdownViewer from '../MarkdownViewer';
 
-
-const WhatIsHTML = () => {
+const Doctype = () => {
   const [markdown, setMarkdown] = useState(null);
   useEffect(() => {
     fetch(whatIsHTML)
@@ -13,11 +12,11 @@ const WhatIsHTML = () => {
       .then(md => setMarkdown(md));
   }, []);
   return (
-    <div className="subject-content-container">
+    <div className='subject-content-container'>
       <SubjectSiteMap />
       <MarkdownViewer markdown={markdown} />
     </div>
-  );
-};
+  )
+}
 
-export default WhatIsHTML;
+export default Doctype

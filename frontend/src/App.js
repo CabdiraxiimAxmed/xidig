@@ -13,6 +13,7 @@ import UserProfile from './components/UserProfile';
 import Head from './components/learning/html/Head';
 import Html from './components/learning/html/Html';
 import WhatIsHTML from './components/learning/html/WhatIsHTML';
+import Doctype from './components/learning/html/Doctype';
 function App() {
   const [formData, setFormData] = useState(null);
   useEffect(() => {
@@ -39,11 +40,12 @@ function App() {
             <Route path="/banaan/:username/weydi" element={<AskQuestion />} />
             <Route path="/banaan/:username/profile" element={<UserProfile />} />
             <Route path="/banaan/baro/html/" element={<Html />} />
-            <Route path="/banaan/baro/html/cinwaan" element={<Head />} />
             <Route
               path="/banaan/baro/html/waa-maxay-html"
               element={<WhatIsHTML />}
             />
+            <Route path="/banaan/baro/html/doctype" element={<Doctype />} />
+            <Route path="/banaan/baro/html/cinwaan" element={<Head />} />
           </Route>
         </Routes>
       </div>

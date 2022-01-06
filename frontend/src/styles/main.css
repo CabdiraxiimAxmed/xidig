@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Indie+Flower&family=Montserrat:wght@400;500;700&family=Roboto&family=Shadows+Into+Light&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Delius&family=Fira+Code&family=Montserrat:wght@400;500;700&family=Roboto&display=swap");
 .analytics {
   width: 90vw;
   display: -webkit-box;
@@ -843,6 +843,12 @@ h2 {
   font-size: 18px;
   color: #c8c7cc;
   font-family: "Montserrat", sans-serif;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  -o-border-image: linear-gradient(to right, #c8c7cc, rgba(9, 18, 255, 0.53), red);
+     border-image: -webkit-gradient(linear, left top, right top, from(#c8c7cc), color-stop(rgba(9, 18, 255, 0.53)), to(red));
+     border-image: linear-gradient(to right, #c8c7cc, rgba(9, 18, 255, 0.53), red);
+  border-image-slice: 1;
 }
 
 h3 {
@@ -891,21 +897,71 @@ blockquote {
   border-left: 10px solid rgba(9, 18, 255, 0.53);
   width: 30rem;
   padding-left: 3px;
-  font-family: 'Indie Flower', cursive;
   margin-top: 5px;
   margin-left: 2rem;
   margin-bottom: 10px;
   background-color: #0e1127;
+  -webkit-box-shadow: 1px 1px 6px rgba(9, 18, 255, 0.53);
+          box-shadow: 1px 1px 6px rgba(9, 18, 255, 0.53);
+  -webkit-animation: shadowAnimation 8s ease infinite;
+          animation: shadowAnimation 8s ease infinite;
 }
 
 blockquote p {
   font-size: 20px;
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Delius', cursive;
+}
+
+@-webkit-keyframes shadowAnimation {
+  0% {
+    -webkit-box-shadow: 1px 1px 6px white;
+            box-shadow: 1px 1px 6px white;
+  }
+  25% {
+    -webkit-box-shadow: 1px 1px 6px palevioletred;
+            box-shadow: 1px 1px 6px palevioletred;
+  }
+  50% {
+    -webkit-box-shadow: 1px 1px 6px orange;
+            box-shadow: 1px 1px 6px orange;
+  }
+  75% {
+    -webkit-box-shadow: 1px 1px 6px blue;
+            box-shadow: 1px 1px 6px blue;
+  }
+  100% {
+    -webkit-box-shadow: 1px 1px 6px yellow;
+            box-shadow: 1px 1px 6px yellow;
+  }
+}
+
+@keyframes shadowAnimation {
+  0% {
+    -webkit-box-shadow: 1px 1px 6px white;
+            box-shadow: 1px 1px 6px white;
+  }
+  25% {
+    -webkit-box-shadow: 1px 1px 6px palevioletred;
+            box-shadow: 1px 1px 6px palevioletred;
+  }
+  50% {
+    -webkit-box-shadow: 1px 1px 6px orange;
+            box-shadow: 1px 1px 6px orange;
+  }
+  75% {
+    -webkit-box-shadow: 1px 1px 6px blue;
+            box-shadow: 1px 1px 6px blue;
+  }
+  100% {
+    -webkit-box-shadow: 1px 1px 6px yellow;
+            box-shadow: 1px 1px 6px yellow;
+  }
 }
 
 p img {
-  width: 100%;
-  height: 100%;
+  float: left;
+  max-width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
 }
@@ -942,6 +998,7 @@ table {
 
 code {
   color: #f3bd0b;
+  font-family: 'Fira Code', sans-serif;
 }
 
 table,

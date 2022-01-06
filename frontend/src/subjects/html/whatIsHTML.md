@@ -42,3 +42,16 @@
 >✏️ Tusaale \
 > ``<img src='sawir.png' \>`` \
 >📖 waxaa loo yaqaan ``self closing tag``
+
+## ⚠️ HTMLku ma'ahan...
+**HTMlku** ma'ahan luuqad **programming** ah ee waa luuqad **Markup❗** ah taas oo micneheedu yahay, waa luuqad lagu qurxiyo documintiyada.
+>👉 ```HTML != programming language```
+## Ereyada aad maqli doontid
+📢 Wall intaad course kaan ku jirtid waxaad maqli doontaa erayo kuwaas aadan horey u maqal waxaana ka mid ah kuwaa hoos ku qoran. 🙏 Fadlan hadaad kuwa ilaawno inaad ku darno listiga ka baar **Google ka**  ``waa laga fiican yahay inaad xifdiso erey aadan micnihiisa aqoon``
+
+* ``Tag``
+  * Waxaa la yiraahdaa calaamadahaan ``<> </>``
+* ``magaca tagga``
+  * Tag kasta waxa uu leeyahay magac ``Tusaale``, Tagga lagu qoro qoraalka caadiga ah ee aanan eheen cinwaan waxaa la yiraahdaa ``paragraph tag`` waxaana loo qoraa sidaan ``<p>``Magacey waa Maxamed``</p>``. 
+* ``Element``
+  * Markii la isku daro **Tagga** macal xogta la socoto ayaa waxaa la isku dhahaa **element**

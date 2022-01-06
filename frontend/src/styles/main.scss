@@ -36,7 +36,12 @@ h2 {
   font-size: 18px;
   color: $normalColor;
   font-family: $font;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right,$normalColor, $primaryButtonColor, red);
+  border-image-slice: 1;
 }
+
 h3 {
   font-size: 17px;
   color: $normalColor;
@@ -80,21 +85,39 @@ blockquote {
   border-left: 10px solid $primaryButtonColor;
   width: 30rem;
   padding-left: 3px;
-  font-family: 'Indie Flower', cursive;
   margin-top: 5px;
   margin-left: 2rem;
   margin-bottom: 10px;
   background-color: $primaryCardColor;
+  box-shadow: $shadowLength $primaryButtonColor;
+  animation: shadowAnimation 8s ease infinite;
   p {
     font-size: 20px;
-    font-family: 'Indie Flower', cursive;
-  }
+    font-family: 'Delius', cursive;
+    }
 }
-
+@keyframes shadowAnimation {
+ 0% {
+   box-shadow: $shadowLength white;
+ }
+ 25% {
+  box-shadow: $shadowLength palevioletred;
+ }
+ 50% {
+  box-shadow: $shadowLength orange;
+ } 
+ 75% {
+  box-shadow: $shadowLength blue;
+ }
+ 100% {
+  box-shadow: $shadowLength yellow;
+}
+}
 p {
   img {
-    width: 100%;
-    height: 100%;
+    float:left;
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
   }
@@ -126,8 +149,10 @@ table {
   border-collapse: collapse;
   margin: 10px 0;
 }
+
 code {
   color: rgb(243, 189, 11);
+  font-family: 'Fira Code', sans-serif;
 }
 table,
 th,
