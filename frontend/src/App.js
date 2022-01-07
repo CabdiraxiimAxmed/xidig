@@ -14,6 +14,9 @@ import Head from './components/learning/html/Head';
 import Html from './components/learning/html/Html';
 import WhatIsHTML from './components/learning/html/WhatIsHTML';
 import Doctype from './components/learning/html/Doctype';
+import HtmlTag from './components/learning/html/HtmlTag';
+import HtmlHead from './components/learning/html/HtmlHead';
+import Body from './components/learning/html/Body';
 function App() {
   const [formData, setFormData] = useState(null);
   useEffect(() => {
@@ -45,6 +48,9 @@ function App() {
               element={<WhatIsHTML />}
             />
             <Route path="/banaan/baro/html/doctype" element={<Doctype />} />
+            <Route path="/banaan/baro/html/htmltag" element={<HtmlTag />} />
+            <Route path="/banaan/baro/html/madaxa-html" element={<HtmlHead />} />
+            <Route path="/banaan/baro/html/dhexda-html" element={<Body />} />
             <Route path="/banaan/baro/html/cinwaan" element={<Head />} />
           </Route>
         </Routes>

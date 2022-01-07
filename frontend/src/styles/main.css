@@ -817,6 +817,24 @@
   display: block;
 }
 
+.editor-and-view-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editor-and-view-container #editor {
+  margin-left: 1rem;
+  font-family: 'Fira Code';
+}
+
+.editor-and-view-container .code-view {
+  width: 50%;
+  height: auto;
+  background-color: white;
+  margin-left: 5px;
+}
+
 *,
 *::after,
 *::before {
@@ -959,7 +977,6 @@ blockquote p {
 }
 
 p img {
-  float: left;
   max-width: 100%;
   height: auto;
   display: block;
@@ -971,11 +988,6 @@ p a img {
      object-fit: cover;
   width: 14rem;
   height: 2rem;
-}
-
-img {
-  width: 18rem;
-  height: 18rem;
 }
 
 .question-content img {

@@ -1,22 +1,27 @@
 import SubjectSiteMap from '../SubjectSiteMap';
-import doctype from '../../../subjects/html/doctype.md';
+import htmlTag from '../../../subjects/html/htmlTag.md';
 import { useEffect, useState } from 'react';
 import React from 'react'
 import MarkdownViewer from '../MarkdownViewer';
+import Editor from '../Editor';
 
-const Doctype = () => {
+const HtmlTag = () => {
   const [markdown, setMarkdown] = useState(null);
   useEffect(() => {
-    fetch(doctype)
+    fetch(htmlTag)
       .then(res => res.text())
       .then(md => setMarkdown(md));
   }, []);
   return (
-    <div className='subject-content-container'>
+    <>
+    <div className="subject-content-container">
       <SubjectSiteMap />
       <MarkdownViewer markdown={markdown} />
+      
     </div>
-  )
+    <Editor />
+    </>
+  );
 }
 
-export default Doctype
+export default HtmlTag

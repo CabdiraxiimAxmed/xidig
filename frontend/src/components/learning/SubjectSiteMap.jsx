@@ -29,6 +29,8 @@ const SubjectSiteMap = () => {
       />
       <div className="subject-sitemap-content">
         <Link to="/banaan/baro/html/waa-maxay-html">Waa maxay html</Link>
+        <Link to="/banaan/baro/html/doctype">DOCTYPE</Link>
+        <Link to="/banaan/baro/html/htmltag">htmltag</Link>
         <Link to="/banaan/baro/html/cinwaan">Cinwaanada</Link>
         <Link to="#">Link3</Link>
       </div>

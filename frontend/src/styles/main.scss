@@ -13,6 +13,7 @@
 @import './userProfileMenu';
 @import './userProfile';
 @import './subjectSiteMap';
+@import './editor';
 *,
 *::after,
 *::before {
@@ -115,7 +116,6 @@ blockquote {
 }
 p {
   img {
-    float:left;
     max-width: 100%;
     height: auto;
     display: block;
@@ -128,10 +128,6 @@ p {
       height: 2rem;
     }
   }
-}
-img {
-  width: 18rem;
-  height: 18rem;
 }
 .question-content {
   img {
